@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Năm Mới 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="flower-container"></div>
+
+    <div class="container main-content"> <div id="input-section">
+            <h1>🧧 Chúc Mừng Năm Mới 2026 🧧</h1>
+            ```
+
+---
+
+### Bước 3: Cập nhật `public/style.css`
+
+Chúng ta cần định dạng cho container chứa hoa và tạo hiệu ứng động (animation) cho hoa rơi xuống và xoay tròn.
+
+Thêm đoạn code sau vào cuối file `style.css`:
+
+```css
+/* --- CẬP NHẬT CHO HOA RƠI --- */
+
+/* Container chứa hoa phải nằm đè lên hoặc dưới nền, không chặn click chuột */
+#flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Để hoa rơi phía sau nội dung chính */
+    pointer-events: none; /* Quan trọng: để chuột click xuyên qua hoa */
+}
+
+/* Class chung cho các bông hoa */
+.falling-flower {
+    position: absolute;
+    top: -50px; /* Bắt đầu từ phía trên màn hình */
+    user-select: none;
+    animation-name: fallAndSpin;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; /* Giữ trạng thái cuối cùng khi kết thúc */
+}
+
+/* Định nghĩa chuyển động rơi và xoay */
+@keyframes fallAndSpin {
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(20px) rotate(180deg); /* Lắc lư nhẹ sang phải */
+    }
+    100% {
+        top: 110vh; /* Rơi quá màn hình dưới */
+        transform: translateX(-20px) rotate(360deg); /* Lắc lư sang trái và xoay đủ vòng */
+        opacity: 0.7;
+    }
+}
+
+/* Đảm bảo nội dung chính nổi lên trên hoa */
+.main-content {
+    position: relative;
+    z-index: 10;
+}

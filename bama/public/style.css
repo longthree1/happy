@@ -1,0 +1,63 @@
+body {
+    background-color: #c0392b; /* Màu đỏ tết */
+    color: #f1c40f; /* Màu vàng mai */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+input {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #f1c40f;
+    color: #c0392b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden { display: none; }
+
+.lixi-card {
+    width: 200px;
+    height: 300px;
+    background-color: #e74c3c;
+    border: 4px solid #f1c40f;
+    border-radius: 15px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.lixi-card:hover { transform: scale(1.05) rotate(2deg); }
+
+#final-wish {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 20px;
+    border: 2px dashed #f1c40f;
+}
